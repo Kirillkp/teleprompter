@@ -1,0 +1,20 @@
+strings:
+  - inputs: Resources/strings.lproj
+    filter: .+\.strings$
+    outputs:
+      templateName: structured-swift5
+      output: Resources/generated/Strings.swift
+      params:
+        publicAccess: public
+
+xcassets:
+   inputs:
+     - Resources/Colors.xcassets
+     - Resources/Assets.xcassets
+   outputs:
+     - templateName: swift5
+       params:
+         forceProvidesNamespaces: true
+         enumName: XCAsset
+         publicAccess: public
+       output: Resources/generated/Assets.swift
